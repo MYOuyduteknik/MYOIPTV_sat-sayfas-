@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MYO IPTV | Uydu Teknik</title>
+
+<style>
+:root{
+  --bordo:#781d35;
+  --bordo2:#a42b49;
+  --lacivert:#102b50;
+  --mavi:#1d4f86;
+  --krem:#f8f6f3;
+  --beyaz:#fff;
+  --text:#172033;
+  --muted:#70798a;
+  --shadow:0 18px 50px rgba(16,43,80,.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--beyaz);
+  color:var(--text);
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #eee;
+  backdrop-filter:blur(15px);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  height:78px;
+  padding:0 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  color:var(--lacivert);
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:var(--bordo);
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.menu a{
+  font-size:14px;
+  font-weight:700;
+  color:#273248;
+}
+
+.menu a:hover{
+  color:var(--bordo);
+}
+
+.menu .login{
+  color:#fff;
+  background:var(--bordo);
+  padding:12px 21px;
+  border-radius:8px;
+}
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(circle at 85% 20%,rgba(120,29,53,.10),transparent 30%),
+  radial-gradient(circle at 10% 80%,rgba(29,79,134,.10),transparent 30%),
+  var(--krem);
+}
+
+.hero-inner{
+  max-width:1200px;
+  min-height:650px;
+  margin:auto;
+  padding:75px 25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.label{
+  display:inline-block;
+  color:var(--bordo);
+  background:#f4e5ea;
+  padding:8px 15px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:72px;
+  line-height:.98;
+  letter-spacing:-4px;
+  color:var(--lacivert);
+}
+
+.hero h1 span{
+  color:var(--bordo);
+}
+
+.hero-text{
+  max-width:580px;
+  margin:25px 0;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.8;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 24px;
+  border-radius:9px;
+  font-weight:800;
+  transition:.3s;
+}
+
+.btn-main{
+  background:var(--bordo);
+  color:white;
+}
+
+.btn-main:hover{
+  background:var(--lacivert);
+  transform:translateY(-3px);
+}
+
+.btn-blue{
+  border:2px solid var(--lacivert);
+  color:var(--lacivert);
+}
+
+.btn-blue:hover{
+  background:var(--lacivert);
+  color:white;
+}
+
+/* HERO CARD */
+
+.hero-box{
+  background:var(--lacivert);
+  border-radius:28px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  transform:rotate(1deg);
+}
+
+.screen{
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  transform:rotate(-1deg);
+}
+
+.screen-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.screen-top small{
+  color:var(--bordo);
+  font-weight:900;
+}
+
+.live{
+  font-size:11px;
+  background:#f4e5ea;
+  color:var(--bordo);
+  padding:6px 10px;
+  border-radius:20px;
+  font-weight:900;
+}
+
+.screen h2{
+  color:var(--lacivert);
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.screen p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.hero-price{
+  display:flex;
+  justify-content:space-between;
+  padding:14px;
+  background:#f7f8fa;
+  border-radius:9px;
+  margin:8px 0;
+  font-weight:700;
+}
+
+.hero-price strong{
+  color:var(--bordo);
+}
+
+/* SECTIONS */
+
+section{
+  padding:90px 25px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading small{
+  color:var(--bordo);
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.heading h2{
+  font-size:42px;
+  color:var(--lacivert);
+  margin:7px 0;
+}
+
+.heading p{
+  color:var(--muted);
+}
+
+/* IPTV */
+
+.iptv{
+  background:white;
+}
+
+.packages{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.package{
+  border:1px solid #e7e9ed;
+  border-radius:20px;
+  padding:30px;
+  background:white;
+  box-shadow:0 10px 35px rgba(0,0,0,.05);
+  position:relative;
+  overflow:hidden;
+}
+
+.package:hover{
+  box-shadow:var(--shadow);
+  transform:translateY(-5px);
+}
+
+.package:first-child{
+  border-top:4px solid var(--bordo);
+}
+
+.package:last-child{
+  border-top:4px solid var(--lacivert);
+}
+
+.package h3{
+  color:var(--lacivert);
+  font-size:25px;
+  margin-bottom:20px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid #edf0f4;
+}
+
+.row:last-of-type{
+  border-bottom:0;
+}
+
+.row span{
+  color:#475467;
+  font-weight:700;
+}
+
+.row strong{
+  color:var(--bordo);
+  font-size:19px;
+}
+
+.whatsapp{
+  display:block;
+  text-align:center;
+  margin-top:25px;
+  background:#168b78;
+  color:white;
+  padding:13px;
+  border-radius:9px;
+  font-weight:900;
+}
+
+.whatsapp:hover{
+  background:#0d6e60;
+}
+
+/* PRODUCTS */
+
+.products{
+  background:var(--krem);
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.product{
+  background:white;
+  border:1px solid #e8e8e8;
+  border-radius:18px;
+  padding:22px;
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+
+.product-image{
+  height:150px;
+  border-radius:13px;
+  background:linear-gradient(135deg,#f1e5e9,#e9f0f8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+  margin-bottom:20px;
+}
+
+.product h3{
+  color:var(--lacivert);
+  font-size:18px;
+  min-height:48px;
+}
+
+.product p{
+  color:var(--muted);
+  font-size:13px;
+  min-height:40px;
+  margin:7px 0;
+}
+
+.price{
+  color:var(--bordo);
+  font-size:24px;
+  font-weight:900;
+}
+
+.shipping{
+  font-size:12px;
+  color:#697386;
+  margin:6px 0 15px;
+}
+
+.product-btn{
+  display:block;
+  text-align:center;
+  background:var(--lacivert);
+  color:white;
+  padding:11px;
+  border-radius:8px;
+  font-weight:800;
+}
+
+.product-btn:hover{
+  background:var(--bordo);
+}
+
+/* SERVICES */
+
+.services{
+  background:white;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service{
+  border:1px solid #e7e9ed;
+  border-radius:18px;
+  padding:30px 18px;
+  text-align:center;
+  background:white;
+  transition:.3s;
+}
+
+.service:hover{
+  border-color:var(--bordo);
+  transform:translateY(-5px);
+}
+
+.icon{
+  width:65px;
+  height:65px;
+  margin:auto auto 15px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f4e5ea;
+  color:var(--bordo);
+  font-size:28px;
+}
+
+.service h3{
+  color:var(--lacivert);
+  font-size:17px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:7px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--krem);
+}
+
+.contact-box{
+  background:linear-gradient(135deg,var(--lacivert),#173e70);
+  color:white;
+  border-radius:25px;
+  padding:60px 30px;
+  text-align:center;
+}
+
+.contact-box h2{
+  font-size:40px;
+}
+
+.contact-box p{
+  color:#dce4ef;
+  max-width:650px;
+  margin:12px auto 25px;
+}
+
+.contact-box .btn{
+  background:white;
+  color:var(--lacivert);
+}
+
+/* FOOTER */
+
+footer{
+  background:#091a32;
+  color:white;
+  padding:45px 25px 20px;
+}
+
+.footer{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  font-size:24px;
+  font-weight:900;
+}
+
+.footer-logo span{
+  color:#c33c5d;
+}
+
+.footer p{
+  color:#aeb9c9;
+  font-size:13px;
+  max-width:420px;
+  margin-top:8px;
+}
+
+.footer-links{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#d5dce7;
+  font-size:13px;
+}
+
+.copy{
+  max-width:1200px;
+  margin:30px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#8d99ab;
+  font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .nav{
+    height:auto;
+    padding:15px;
+    flex-direction:column;
+    gap:13px;
+  }
+
+  .menu{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .menu a{
+    font-size:12px;
+  }
+
+  .hero-inner{
+    padding:55px 18px;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .hero-box{
+    transform:none;
+  }
+
+  .screen{
+    transform:none;
+    padding:22px;
+  }
+
+  .packages,
+  .product-grid,
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:65px 18px;
+  }
+
+  .heading h2{
+    font-size:32px;
+  }
+
+  .contact-box h2{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+
+<a href="#anasayfa" class="logo">
+MYO <span>IPTV</span>
+</a>
+
+<div class="menu">
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#iptv">Paketler</a>
+<a href="#urunler">Ürünler</a>
+<a href="#hizmetler">Hizmetler</a>
+<a href="#iletisim">İletişim</a>
+<a href="#iptv" class="login">GİRİŞ</a>
+</div>
+
+</div>
+</header>
+
+
+<!-- ANA EKRAN -->
+
+<section class="hero" id="anasayfa">
+
+<div class="hero-inner">
+
+<div>
+
+<span class="label">MYO UYDU TEKNİK</span>
+
+<h1>
+MYO<br>
+<span>IPTV</span>
+</h1>
+
+<p class="hero-text">
+Yayın paketleri, uydu sistemleri, TV Box,
+uydu alıcıları ve teknik servis çözümleri.
+İhtiyacınız olan hizmeti tek noktada keşfedin.
+</p>
+
+<div class="buttons">
+
+<a href="#iptv" class="btn btn-main">
+PAKETLERİ İNCELE
+</a>
+
+<a href="#urunler" class="btn btn-blue">
+ÜRÜNLERİ GÖR
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-box">
+
+<div class="screen">
+
+<div class="screen-top">
+<small>MYO IPTV</small>
+<span class="live">PAKETLER</span>
+</div>
+
+<h2>Size Uygun Paketi Seçin</h2>
+
+<p>
+Türkiye ve yurt dışı seçenekleri.
+</p>
+
+<div class="hero-price">
+<span>6 Aylık</span>
+<strong>800 TL</strong>
+</div>
+
+<div class="hero-price">
+<span>1 Yıllık</span>
+<strong>1.400 TL</strong>
+</div>
+
+<div class="hero-price">
+<span>2 Yıllık</span>
+<strong>2.000 TL</strong>
+</div>
+
+<a href="#iptv" class="btn btn-main">
+TÜM PAKETLERİ GÖR
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IPTV -->
+
+<section class="iptv" id="iptv">
+
+<div class="container">
+
+<div class="heading">
+<small>MYO IPTV</small>
+<h2>Abonelik Paketleri</h2>
+<p>Türkiye ve yurt dışı paket seçenekleri</p>
+</div>
+
+<div class="packages">
+
+<div class="package">
+
+<h3>Türkiye • Yurt İçi</h3>
+
+<div class="row">
+<span>6 Aylık</span>
+<strong>800 TL</strong>
+</div>
+
+<div class="row">
+<span>1 Yıllık</span>
+<strong>1.400 TL</strong>
+</div>
+
+<div class="row">
+<span>2 Yıllık</span>
+<strong>2.000 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık</span>
+<strong>2.400 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık + 2</span>
+<strong>2.600 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık + 4</span>
+<strong>3.000 TL</strong>
+</div>
+
+<a class="whatsapp"
+href="https://wa.me/12053513666?text=Merhaba%20MYO%20IPTV%20Türkiye%20paketleri%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+
+</div>
+
+
+<div class="package">
+
+<h3>Yurt Dışı</h3>
+
+<div class="row">
+<span>6 Aylık</span>
+<strong>900 TL</strong>
+</div>
+
+<div class="row">
+<span>1 Yıllık</span>
+<strong>1.500 TL</strong>
+</div>
+
+<div class="row">
+<span>2 Yıllık</span>
+<strong>2.200 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık</span>
+<strong>2.600 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık + 2</span>
+<strong>2.800 TL</strong>
+</div>
+
+<div class="row">
+<span>3 Yıllık + 4</span>
+<strong>3.200 TL</strong>
+</div>
+
+<a class="whatsapp"
+href="https://wa.me/12053513666?text=Merhaba%20MYO%20IPTV%20yurt%20dışı%20paketleri%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ÜRÜNLER -->
+
+<section class="products" id="urunler">
+
+<div class="container">
+
+<div class="heading">
+<small>MYO ÜRÜNLER</small>
+<h2>Uydu & TV Ürünleri</h2>
+<p>Uydu alıcıları, LNB ve Android TV Box seçenekleri</p>
+</div>
+
+<div class="product-grid">
+
+
+<div class="product">
+<div class="product-image">📡</div>
+<h3>Dreamstar Aura Mini Uydu Alıcısı</h3>
+<p>Uydu alıcısı</p>
+<div class="price">649,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20Dreamstar%20Aura%20Mini%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">◉</div>
+<h3>NEXT Tekli LNB</h3>
+<p>Tekli LNB</p>
+<div class="price">199,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20NEXT%20tekli%20LNB%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">◉</div>
+<h3>MAXICOM İkili LNB</h3>
+<p>İkili LNB</p>
+<div class="price">299,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20MAXICOM%20ikili%20LNB%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">◉</div>
+<h3>MAXICOM 4'lü LNB</h3>
+<p>4 çıkışlı LNB</p>
+<div class="price">549,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20MAXICOM%204lü%20LNB%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">📡</div>
+<h3>Dreamstar Santral 4'lü LNB</h3>
+<p>Santral sistemleri için</p>
+<div class="price">649,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20Dreamstar%20santral%204lü%20LNB%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">📺</div>
+<h3>One Box Android 14 • 6K HDR</h3>
+<p>Android TV Box</p>
+<div class="price">2.659,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20One%20Box%20Android%2014%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+<div class="product">
+<div class="product-image">📺</div>
+<h3>Arris VIP7100 4K Android TV Box</h3>
+<p>Google sertifikalı Android TV</p>
+<div class="price">3.859,99 TL</div>
+<div class="shipping">Kargo ücreti fiyata dahildir.</div>
+<a class="product-btn"
+href="https://wa.me/12053513666?text=Merhaba%20Arris%20VIP7100%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+</div>
+
+
+</div>
+</div>
+
+</section>
+
+
+<!-- HİZMETLER -->
+
+<section class="services" id="hizmetler">
+
+<div class="container">
+
+<div class="heading">
+<small>MYO UYDU TEKNİK</small>
+<h2>Hizmetlerimiz</h2>
+<p>İstanbul Anadolu Yakası'nda teknik servis</p>
+</div>
+
+<div class="service-grid">
+
+<div class="service">
+<div class="icon">📡</div>
+<h3>Uydu Anten Montajı</h3>
+<p>Çanak anten montaj ve ayar hizmetleri.</p>
+</div>
+
+<div class="service">
+<div class="icon">🔧</div>
+<h3>Bakım & Onarım</h3>
+<p>Uydu sistemlerinde bakım ve onarım.</p>
+</div>
+
+<div class="service">
+<div class="icon">📺</div>
+<h3>Uydu Alıcısı</h3>
+<p>Uydu alıcısı satış ve kurulum desteği.</p>
+</div>
+
+<div class="service">
+<div class="icon">⚙️</div>
+<h3>Arıza Tespit</h3>
+<p>Sinyal ve bağlantı sorunlarının kontrolü.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- İLETİŞİM -->
+
+<section class="contact" id="iletisim">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>MYO IPTV</h2>
+
+<p>
+Paketler, ürünler veya teknik servis hakkında bilgi almak için WhatsApp üzerinden bize ulaşabilirsiniz.
+</p>
+
+<a class="btn"
+href="https://wa.me/12053513666?text=Merhaba%20MYO%20IPTV%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank">
+WhatsApp'tan Yazın
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer">
+
+<div>
+<div class="footer-logo">
+MYO <span>IPTV</span>
+</div>
+<p>
+IPTV • Uydu Sistemleri • TV Box • Uydu Alıcıları • Teknik Servis
+</p>
+</div>
+
+<div class="footer-links">
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#iptv">Paketler</a>
+<a href="#urunler">Ürünler</a>
+<a href="#hizmetler">Hizmetler</a>
+<a href="#iletisim">İletişim</a>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 MYO UYDU TEKNİK — Tüm hakları saklıdır
+</div>
+
+</footer>
+
+</body>
+</html>
